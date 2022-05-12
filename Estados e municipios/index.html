@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+ 
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Document</title>
+</head>
+
+<body>
+    <h1> Dados IBGE </h1>
+    <h2> Escolha o Estado Desejado</h2>
+    
+
+    <div>
+        <select id="estado" onchange="callCities()">
+            <option value="">Estado</option>
+        </select>
+    </div>
+    <div id="muni" hidden>
+        <h2> Escolha o Municipio Desejado</h2>
+        <button>Ver mais</button>
+        
+        <select id="municipio">
+            <option value="">Municipio</option>
+            
+        </select>
+    </div>
+    
+    
+
+    <script>
+
+        async function callStates() {
+            try {
+                const res = await
+                    fetch("https://servicodados.ibge.gov.br/api/v1/localidades/estados");
+                const list = await res.json();
+                const estados = document.getElementById("estado")
+                list.forEach(element => {
+                    const ListEstados = document.createElement("option")
+                    ListEstados.innerText = element.nome
+                    ListEstados.value = element.sigla
+                    estados.appendChild(ListEstados)
+
+                });
+
+            } catch (error) {
+                console.log(error);
+            }
+        }
+        callStates();
+
+        async function callCities() {
+            try {
+                const estados = document.getElementById("estado")
+                const cipio = document.getElementById("muni")
+                const municipios = document.getElementById("municipio")
+                let UF = estados.value
+                muni.hidden = false
+                const res = await
+                    fetch(`https://servicodados.ibge.gov.br/api/v1/localidades/estados/${UF}/municipios`);
+                const list = await res.json();
+                console.log(list)
+                list.forEach(element => {
+                    const ListMunicipios = document.createElement("option")
+                    ListMunicipios.innerText = element.nome
+                    ListMunicipios.value = element.id
+                    municipios.appendChild(ListMunicipios)
+                });
+
+            } catch (error) {
+                console.log(error);
+            }
+        }
+        
+
+
+    </script>
+
+</body>
+
+</html>

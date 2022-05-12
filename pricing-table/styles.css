@@ -1,0 +1,126 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    
+}
+html, body {
+    height: 100%;
+    
+}
+
+
+
+
+
+body{
+    
+    font-size: 1rem;
+    line-height: 1.5;
+    background-color: #1D539E;
+    font-family: 'Open Sans', sans-serif;
+    color: #FFFFFF;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.pricing__section {
+    text-align: center;
+    
+}
+
+
+
+.pricing__heading {
+    
+    font-weight: 600;
+    font-size: 48px;    
+}
+
+.pricing__intro {
+    padding-bottom: 300px;
+    padding-top: 30px;
+    font-weight: normal;
+    font-size: 18px;
+    
+    
+    letter-spacing: 1px;
+}
+
+.pricing__plans {
+    display: flex;
+    justify-content: space-between;
+    align-items: initial;
+    width: 1500px;
+    padding-top: 3,5rem;
+    
+    
+    
+    
+}
+
+.plan {
+    flex-basis: 32%;
+    background: linear-gradient(120deg, #FFFFFF, #FFFAFA);
+    border-radius: 0.5rem;
+    box-shadow: 0 25px 50 px -12px rgba(0, 0, 0, .25);
+    color: #828799;
+    position: relative;
+    
+}
+.plan.basic::before {
+    content: 'Popular';
+    font-size:  65%;
+    background-color: #1D539E;
+    color: #FFFFFF;
+    box-shadow: 025px 50px -12px -12px rgba(0, 0, 0, .25);
+    display: inline-block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 8px 1rem;
+    transform: translate(530%, 15%);
+    border-radius: 40px;
+    
+    
+    font-weight: 600;
+}
+
+.plan__heading {
+    
+    padding: 10px 12.2rem;
+
+    
+    color: #666;
+    font-size: 20px;
+    
+    box-shadow: 025px 50px -12px -12px rgba(0, 0, 0, .25);
+    
+}
+.plan__heading__popular {
+    
+    padding: 10px 12.2rem;
+    
+    background-color: #FFCC29;
+    border-top-left-radius: 0.5rem;
+    border-top-right-radius: 0.5rem;
+    
+   
+    color: #666;
+    font-size: 20px;
+    
+    box-shadow: 025px 50px -12px -12px rgba(0, 0, 0, 0.25);
+    
+}
+.plan
+
+.plan__price__section {
+    padding-top: 1rem;
+    display: inline-block;
+    font-size: 18px;
+    font-weight: 600;
+    
+}
+

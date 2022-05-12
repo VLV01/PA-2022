@@ -1,0 +1,25 @@
+
+
+
+
+
+h2{
+    margin: 50px;
+    text-align: center;
+}
+img{
+    display: block;  
+    margin: auto;
+    width:1200px;
+     height:350px;
+}
+
+body {
+    border-left: 300px solid pink;
+    border-right: 300px solid pink;
+    border-top: 75px solid pink;
+    border-bottom: 75px solid pink;
+} 
+p {
+    padding-left: 20px;
+}

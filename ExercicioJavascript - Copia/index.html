@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+
+<html lang="pt-BR">
+
+<head></head>
+
+<body>
+  <h1>Ola Mundo!</h1>
+   <script>
+
+//PLANETAS
+
+fetch("https://swapi.dev/api/planets/?page=2")
+  .then(res => {
+    res.json().then(data => {
+
+      const planetas = data.results
+      console.log("Resultado json:", planetas)
+
+      const planetasFrozen = planetas.filter(item => item.climate.includes("frozen"))
+      console.log("Clima frozen: ", planetasFrozen)
+
+      const planetasTemperate = planetas.filter(item => item.climate.includes("temperate")).map((item) => item.name)
+
+      const nomesPlanetasTemperate = planetas.map(function (item) {
+        if (planetasTemperate.includes(item.name)) {
+          return { name: item.name, temperate: "Sim" }
+        } else {
+          return { name: item.name, temperate: "Não" }
+        }
+      })
+      console.log("Clima temperate: ", nomesPlanetasTemperate)
+
+      const quantPlanetasTemperate = nomesPlanetasTemperate.reduce((total) => total = nomesPlanetasTemperate.filter(item => (item.temperate == "Sim")).length)
+      console.log("Quantidade de Planetas de clima temperate: ",quantPlanetasTemperate)
+    })
+  })
+  .catch((e) => console.log("ERRO!", e));
+
+
+
+//PESSOAS
+
+  const getResults = async () => {
+    try{
+      const results = await fetch("https://swapi.dev/api/people/?page=2")
+      let personagens = await results.json();
+      const listaPersonagens = personagens.results;
+
+      console.log("Resultado json: ", listaPersonagens)
+
+      const personagensPeleVerde = listaPersonagens.filter((item) => (item.skin_color == 'green'))
+      console.log("Personagens de pele verde: ", personagensPeleVerde)
+
+
+      const pesonagensMassaMaiorQue100 = listaPersonagens.filter((item) => (item.mass >= 100))
+      console.log("Personagens de massa maior que 100: ", pesonagensMassaMaiorQue100)
+
+      const personagensAlturaMaiorOuIgual180 = listaPersonagens.reduce((total) => total = listaPersonagens.filter(item => (item.height >= 180)).length)
+      console.log("Personagens de altura maior ou igual a 180: ", personagensAlturaMaiorOuIgual180)
+
+      const nomePersonagens = listaPersonagens.map((item) => item.name)
+      console.log("Nome dos personagens: ", nomePersonagens)
+      }catch (error) {
+         console.log(error);
+    }
+  }
+
+  getResults()
+   </script>
+
+</body>
+
+</html>
