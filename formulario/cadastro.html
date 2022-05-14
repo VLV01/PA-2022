@@ -82,13 +82,13 @@
                         <span class="input-mensagem-erro">Este campo não está válido</span>
                     </div>
 
-                    <div class="input-container cadastro__telefone-container">
-                        <input name="telefone" id="telefone" class="input" type="text" placeholder="Telefone" maxlength="15" pattern="(?[\d]{7})?-?[\d]{4}">
+                    <div class="input-container cadastro__telefone__container">
+                        <input name="telefone" id="telefone" class="input" type="text" placeholder="Telefone" data-tipo="telefone" required maxlength="14" required minlength="11" pattern="^(?[\d]{2})?-?[\d]{5}-?[\d]{4}$" required>
                         <label class="input-label" for="telefone">Telefone</label>
                         <span class="input-mensagem-erro">Este campo não está válido</span>
                     </div>
                     <div class="input-container cadastro__instagram_container">
-                        <input name="instagram" id="instagram" class="input" type="email" placeholder="Instagram">
+                        <input name="instagram" id="instagram" class="input" type="text" placeholder="Instagram" pattern="^@[A-Za-z0-9_?-?.?]{1,15}" data-tipo="instagram" required>
                         <label class="input-label" for="instagram">Instagram</label>
                         <span class="input-mensagem-erro">Este campo não está válido</span>
                     </div>

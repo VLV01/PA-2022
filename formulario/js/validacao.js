@@ -57,7 +57,14 @@ const mensagensDeErro = {
     },
     telefone: {
         valueMissing: 'O campo de telefone não pode estar vazio.'
+    },
+    instagram: {
+        valueMissing: 'O campo de instagram não pode estar vazio.'
     }
+
+    
+    
+    
 }
 
 const validadores = {
