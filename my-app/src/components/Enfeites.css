@@ -1,0 +1,17 @@
+button{
+    color: #0000CD;
+    font-size: 20px;
+    border-radius: 40px;
+}
+input{
+    color: #ffffff;
+    background-color: #FFC0CB;
+    border-radius: 40px;
+    font-size: 20px;
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+    width: 500px;
+}
